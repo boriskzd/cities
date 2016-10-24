@@ -1,0 +1,407 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+} 
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+}
+ 
+#wrapper {
+    min-height: 100%;
+    position: relative;
+}
+
+/* Navigation START */
+    header {
+        background: #111;
+        z-index: 1;
+    }
+
+    #navy {
+        max-width: 960px;
+        margin: 0 auto;
+    }
+    #navLogo {
+        display: block;
+        margin: 0 6px
+    }
+
+
+    #mainNav ul {
+        list-style-type: none;
+        background-color: #111;
+        overflow: hidden;
+        clear: none; /* S desne strane NAV UL nema ničeg (Mobile first) */
+    }
+
+    /* Ne prikazuj NAV, osim menija */
+    #mainNav li {
+        display: none;
+    }
+
+    #mainNav ul li.menuIcon {
+        float: right;
+        display: inline-block;
+        /* menu icon stoji pored loga ful desno */
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    #mainNav ul li a {
+        display: block;
+        padding: 10px 20px;
+        text-align: center;
+        color: #eee;
+        height: 40px;
+        transition: 0.3s;
+    }
+
+    #mainNav ul li a.active {
+        background-color: #FD5B03;
+        color: #111;
+        font-weight: bold;
+    }
+
+    #mainNav ul li a:hover:not(.active) {
+        background-color: #333;
+    }
+
+    .menuIcon {
+        float: right
+    }
+
+    .menuIcon:hover {
+        cursor: pointer;
+    }
+
+    .menuIconLine {
+        width: 20px;
+        height: 2px;
+        margin: 4px 0;
+        background-color: #fff;
+    }
+
+    /* RESPONSIVE */
+    @media screen and (min-width: 500px) {
+        /* NAV bar ostaje fixed i kad se skrola, i ne pokriva sadržaj */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+        /* sadržaj počinje nakon headera */
+        #wrapper {
+            margin-top: 40px;
+        }
+        /* LOGO floata livo */
+        #navLogo {
+            float: left;
+        }
+        /* NAV lista nakon širine 600px može biti pored ostalih elemenata (logo) */
+        #mainNav ul {
+            clear: none;       
+        }
+        /* listed item je jedan pored drugog, a ne ispod. */
+        #mainNav ul li {
+            display: block;
+            float: left;
+        }
+
+        #mainNav ul li.menuIcon {
+            display: none;
+        }
+    }   
+/* Navigation END */
+
+/* Content START */
+main {
+    margin: 0 auto;
+    max-width: 960px;
+    padding-bottom: 530px;
+}
+
+    /* Gallery START */
+    #imglry {
+        float: left;
+        clear: both;
+        margin: 6px;
+    }
+
+    #imglry .rspnsv {
+        position: relative;
+        float: left; /* resopnsive */
+        width: 100%;
+        padding: 6px 6px 2px 6px;
+
+    }
+
+    @media screen and (min-width: 1000px) {
+        #imglry {
+            margin: 6px -6px;
+        }
+    }
+
+    #imglry .rspnsv img {
+        width: 100%;
+        height: 100%;
+    }
+
+    #imglry .rspnsv .dscr {
+        position: absolute; /* is positioned relative to nearest positioned ancestor */
+        background: rgba(0,0,0,0.7); /* proziran okvir texta */
+        /* width: 50%; jer nez drukcije da text bude u sredini */
+        bottom: 26px;
+        left: 6px;
+        height: 50px; 
+        line-height: 50px; /* da text bude u centru po visini */
+        padding: 0 15px;
+
+        /* text css */
+        color: #fff;
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+
+
+
+    @media screen and (min-width: 500px) {
+        #imglry .rspnsv {
+            position: relative;
+            width: 50%;
+        }
+    }
+
+    @media screen and (min-width: 800px) {
+        #imglry .rspnsv {
+            position: relative;
+            width: 25%;
+        }
+    }
+    /* Gallery END */
+
+    /* City START */
+    .city {
+        background: #eee;
+        color: #555;
+        padding: 20px;
+        margin: 20px 0;
+        overflow: auto;
+        clear: both;
+    }
+
+    .city h1 {
+        color: #FD5B03;
+        margin: 0 0 10px 0;
+        letter-spacing: 0.1em; 
+    }
+
+    .city p {
+        line-height: 1.5em;
+        padding: 10px 0 5px 0;
+        word-spacing: 0.2em;
+    }
+
+    .city img {
+        float: right;
+        margin: 0;
+    }
+    /* City END */
+    
+    /* Pricing START */
+    .price-div {
+        width: 100%;
+        clear: both;
+    }
+
+    .price-column {
+        width: 100%;
+        float: left;
+        padding: 15px 10px;
+    }
+
+    .pricing {
+        border: 2px solid #e8e8e8;
+        list-style-type: none;
+        transition: 0.3s;
+    }
+
+    .pricing:hover {
+        box-shadow: 0 6px 12px rgba(0,0,0,0.5);
+    }
+
+    .pricing li {
+        padding: 20px;
+        text-align: center;
+    }
+    
+    .pricing li:not(:last-child) {
+        border-bottom: 2px solid #e8e8e8;
+    }
+
+    .price-header {
+        background: #000;
+        color: #fff;
+        font-size: 1.5em;
+        letter-spacing: 2px;
+    }
+
+    .price-price {
+        background: #e8e8e8;
+    }
+
+    .price-signup {
+        background: #e8e8e8;
+    }
+
+    .pricing-button {
+        background: #FD5B03;
+        color: #fff;
+        padding: 10px 30px;
+
+    }
+
+    .best-choice {
+        background: #FD5B03;
+        color: #fff;
+        font-size: 1.5em;
+        letter-spacing: 2px;
+    }
+
+    @media screen and (min-width: 700px) {
+        .price-column {
+            width: 33.33%;
+            padding: 10px;
+        }
+    }
+    /* Pricing END */
+
+    /* Google Maps START */
+    #map-responsive {
+        clear: both;
+        position: relative;
+        padding-bottom: 56.25%;
+        padding-top: 20px;
+        /* nez zašto ovo dvoje doli
+        height: 0;
+        overflow: hidden; */
+
+        margin: 20px 0;
+    }
+
+    #map-responsive iframe {
+        position: absolute;
+        width: 100% !important;
+        height: 100% !important;
+        /* nez zašto ovo dvoje doli 
+        top: 0;
+        left: 0; */
+    }
+    /* Google Maps END*/
+/*Content END */
+
+/* Footer START */
+footer {
+    background: #333;
+    color: #ddd;
+    /* Određuje da se footer uvik lipi za dno, osim kad se skrola */
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 510px;
+}
+
+footer a {
+    color: #FD5B03;
+}
+
+.footy {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.footer-column {
+    background: #353535;
+    width: 100%;
+    float: left;
+    padding: 10px 20px;
+}
+
+@media screen and (min-width: 700px) {
+    .footer-column {
+        width: 50%;
+    }
+
+    main {
+        padding-bottom: 290px;
+    }
+
+    footer {
+        height: 270px;
+    }
+}
+
+footer h4 {
+    text-transform: uppercase;
+    padding: 6px 0 4px 0;
+}
+
+footer h4, p {
+    line-height: 1.5;
+    vertical-align: middle;
+}
+
+#footer-email {
+    height: 40px;
+    width: 100%;
+    text-align: center;
+    margin: 4px 0;
+}
+
+.button-signup {
+    display: inline-block;
+    background: #FD5B03;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    width: 100%;
+    cursor: pointer;
+    margin: 4px 0 15px 0;
+}
+
+.cdb-footer {
+    background: #111;
+    color: #ddd;
+    width: 100%;
+    float: left;
+    padding: 10px;
+}
+
+.cdb-footer p {
+    display: inline-block;
+}
+
+#copyright {
+    float: left;
+}
+
+#designby {
+    float: right;
+}
+
+.orange {
+    color: #FD5B03;
+}
+
+.bold {
+    font-weight: bold;
+}
