@@ -256,6 +256,16 @@ main {
 
     .price-price {
         background: #e8e8e8;
+        height: 70px;
+    }
+
+    .price-free {
+        background: #e8e8e8;
+        height: 70px;
+    }
+
+    .thePrice {
+        font-size:24px;
     }
 
     .price-signup {
@@ -288,13 +298,13 @@ main {
     #map-responsive {
         clear: both;
         position: relative;
-        padding-bottom: 56.25%;
+        padding-bottom: 50%;
         padding-top: 20px;
         /* nez zašto ovo dvoje doli
         height: 0;
         overflow: hidden; */
 
-        margin: 20px 0;
+        margin: 20px 10px;
     }
 
     #map-responsive iframe {
