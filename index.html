@@ -3,6 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Cities - The most spectacular cities around the globe!</title>
     <link rel="stylesheet" href="main.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -87,11 +89,11 @@
                 <div class="price-column">
                     <ul class="pricing">
                         <li class="price-header">Basic</li>
-                        <li class="price-price">FREE </li>
-                        <li>10GB Storage</li>
-                        <li>10 Emails</li>
-                        <li>10 Domains</li>
-                        <li>1GB Bandwidth</li>
+                        <li class="price-free">FREE</li>
+                        <li>1 User</li>
+                        <li>Basic offers</li>
+                        <li>Email support</li>
+                        <li> - </li>
                         <li class="price-signup">
                             <a href="#" class="pricing-button">Sign up</a>
                         </li>
@@ -101,11 +103,11 @@
                 <div class="price-column">
                     <ul class="pricing">
                         <li class="best-choice">Advanced</li>
-                        <li class="price-price">$ 19.99 / year</li>
-                        <li>10GB Storage</li> 
-                        <li>10 Emails</li>
-                        <li>10 Domains</li>
-                        <li>1GB Bandwidth</li>
+                        <li class="price-price">$ <span class="thePrice">19.99</span> / year</li>
+                        <li>3 Users</li> 
+                        <li>Personalised offers</li>
+                        <li>Email + Skype support</li>
+                        <li>Data export</li>
                         <li class="price-signup">
                             <a href="#" class="pricing-button">Sign up</a>
                         </li>
@@ -115,11 +117,11 @@
                 <div class="price-column">
                     <ul class="pricing">
                         <li class="price-header">Premium</li>
-                        <li class="price-price">$ 49.99 / year</li>
-                        <li>10GB Storage</li>
-                        <li>10 Emails</li>
-                        <li>10 Domains</li>
-                        <li>1GB Bandwidth</li>
+                        <li class="price-price">$ <span class="thePrice">49.99</span> / year</li>
+                        <li>10 users</li>
+                        <li>Personalised offers</li>
+                        <li>Email + Skype support</li>
+                        <li>Data export</li>
                         <li class="price-signup">
                             <a href="#" class="pricing-button">Sign up</a>
                         </li>
@@ -128,7 +130,7 @@
             </div> <!-- Price div END -->
 
 
-            <div id="map-responsive"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2780.914306175094!2d15.973488215569173!3d45.81297457910666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4765d6fda5182e51%3A0x9f858f7ffd761d29!2sIlica+1A%2C+10000%2C+Zagreb%2C+Croatia!5e0!3m2!1sen!2sus!4v1476726697508" width="960" height="600" frameborder="0" style="border:0" allowfullscreen></iframe></div>
+            <div id="map-responsive"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2780.914306175094!2d15.973488215569173!3d45.81297457910666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4765d6fda5182e51%3A0x9f858f7ffd761d29!2sIlica+1A%2C+10000%2C+Zagreb%2C+Croatia!5e0!3m2!1sen!2sus!4v1476726697508" width="960" height="480" frameborder="0" style="border:0" allowfullscreen></iframe></div>
 
             
         </main>
@@ -143,9 +145,11 @@
                     </form>
 
                     <h4>Contact</h4>
-                    <p><span class="bold">Adress:</span> Ilica 1, 10000 Zagreb, Croatia</p>
-                    <p><span class="bold">Phone:</span> <a href="tel:0981234567">098/123-4567</a></p>
-                    <p>Email: <a href="mailto:info@cities.com">info@cities.com</a></p>
+                    <address>
+                        <p><span class="bold">Adress:</span> Ilica 1, 10000 Zagreb, Croatia</p>
+                        <p><span class="bold">Phone:</span> <a href="tel:0981234567">098/123-4567</a></p>
+                        <p>Email: <a href="mailto:info@cities.com">info@cities.com</a></p>
+                    </address>
                 </div>
 
                 <div class="footer-column">
@@ -170,7 +174,9 @@
             </div>
 
     </div> <!-- the end of wrapper -->
-    <script src="myScript.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+
+
 </body>
 
 </html>
