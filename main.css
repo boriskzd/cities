@@ -1,3 +1,4 @@
+/* Removes margins and paddings from everything in html/body */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -5,55 +6,58 @@
     text-decoration: none;
 } 
 
-html, body {
-    height: 100%;
-}
-
 body {
     font-family: "Roboto", sans-serif;
     font-size: 16px;
 }
  
 #wrapper {
-    min-height: 100%;
     position: relative;
 }
 
 /* Navigation START */
     header {
         background: #111;
-        z-index: 1;
+        z-index: 1; /* Keeps header on top. Without this GoogleMaps would be over it. */
     }
 
+    /* Makes navigations max width equal to the rest of the site */
     #navy {
         max-width: 960px;
         margin: 0 auto;
     }
-    #navLogo {
-        display: block;
-        margin: 0 6px
+
+    #navLogoContainer {
+        width: 104px;
     }
 
+    #navLogo {
+        display: block;
+        margin: 0 6px;
+    }
 
-    #mainNav ul {
+    #myTopnav {
+        display: none; /* Hide it so it can be opened with dropnav jQuery */ 
+        position: relative;
         list-style-type: none;
         background-color: #111;
         overflow: hidden;
-        clear: none; /* S desne strane NAV UL nema ničeg (Mobile first) */
+        clear: none;
     }
 
-    /* Ne prikazuj NAV, osim menija */
     #mainNav li {
-        display: none;
+        display: block; /* Full width divs on mobile */
     }
 
-    #mainNav ul li.menuIcon {
+    #menuIcon {
         float: right;
         display: inline-block;
-        /* menu icon stoji pored loga ful desno */
+        /* Menu icon is in the top right corner */
         position: absolute;
         top: 0;
         right: 0;
+        height: 40px;
+        padding: 10px 20px;
     }
 
     #mainNav ul li a {
@@ -72,61 +76,29 @@ body {
     }
 
     #mainNav ul li a:hover:not(.active) {
-        background-color: #333;
+        background-color: #444;
     }
 
-    .menuIcon {
-        float: right
-    }
-
-    .menuIcon:hover {
+    #menuIcon:hover {
         cursor: pointer;
+        background: #444;
     }
 
+    /* The look of the menu icon */
     .menuIconLine {
         width: 20px;
         height: 2px;
         margin: 4px 0;
         background-color: #fff;
     }
-
-    /* RESPONSIVE */
-    @media screen and (min-width: 500px) {
-        /* NAV bar ostaje fixed i kad se skrola, i ne pokriva sadržaj */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-        }
-        /* sadržaj počinje nakon headera */
-        #wrapper {
-            margin-top: 40px;
-        }
-        /* LOGO floata livo */
-        #navLogo {
-            float: left;
-        }
-        /* NAV lista nakon širine 600px može biti pored ostalih elemenata (logo) */
-        #mainNav ul {
-            clear: none;       
-        }
-        /* listed item je jedan pored drugog, a ne ispod. */
-        #mainNav ul li {
-            display: block;
-            float: left;
-        }
-
-        #mainNav ul li.menuIcon {
-            display: none;
-        }
-    }   
 /* Navigation END */
 
 /* Content START */
+/* declares width of the site and centers it */
 main {
     margin: 0 auto;
     max-width: 960px;
-    padding-bottom: 530px;
+    padding-bottom: 30px;
 }
 
     /* Gallery START */
@@ -141,14 +113,8 @@ main {
         float: left; /* resopnsive */
         width: 100%;
         padding: 6px 6px 2px 6px;
-
     }
 
-    @media screen and (min-width: 1000px) {
-        #imglry {
-            margin: 6px -6px;
-        }
-    }
 
     #imglry .rspnsv img {
         width: 100%;
@@ -157,40 +123,27 @@ main {
 
     #imglry .rspnsv .dscr {
         position: absolute; /* is positioned relative to nearest positioned ancestor */
-        background: rgba(0,0,0,0.7); /* proziran okvir texta */
-        /* width: 50%; jer nez drukcije da text bude u sredini */
+        background: rgba(0,0,0,0.7); /* transparent description text div */
         bottom: 26px;
         left: 6px;
         height: 50px; 
-        line-height: 50px; /* da text bude u centru po visini */
+        line-height: 50px; /* centers text in the desc */
         padding: 0 15px;
 
         /* text css */
         color: #fff;
         font-size: 1.5em;
-        font-weight: bold;
     }
 
-
-
-    @media screen and (min-width: 500px) {
-        #imglry .rspnsv {
-            position: relative;
-            width: 50%;
-        }
-    }
-
-    @media screen and (min-width: 800px) {
-        #imglry .rspnsv {
-            position: relative;
-            width: 25%;
-        }
+    /* hovered images are black and white */
+    .rspnsv a:hover {
+        filter: grayscale(100%);
     }
     /* Gallery END */
 
     /* City START */
     .city {
-        background: #eee;
+        background: #e0e0e0;
         color: #555;
         padding: 20px;
         margin: 20px 0;
@@ -204,32 +157,28 @@ main {
         letter-spacing: 0.1em; 
     }
 
+    /* makes text more readable */
     .city p {
         line-height: 1.5em;
         padding: 10px 0 5px 0;
         word-spacing: 0.2em;
     }
-
-    .city img {
-        float: right;
-        margin: 0;
-    }
     /* City END */
     
     /* Pricing START */
-    .price-div {
+    .priceDiv {
         width: 100%;
         clear: both;
     }
 
-    .price-column {
+    .priceColumn {
         width: 100%;
         float: left;
         padding: 15px 10px;
     }
 
     .pricing {
-        border: 2px solid #e8e8e8;
+        border: 2px solid #e0e0e0;
         list-style-type: none;
         transition: 0.3s;
     }
@@ -244,23 +193,23 @@ main {
     }
     
     .pricing li:not(:last-child) {
-        border-bottom: 2px solid #e8e8e8;
+        border-bottom: 2px solid #e0e0e0;
     }
 
-    .price-header {
+    .priceHeader {
         background: #000;
         color: #fff;
         font-size: 1.5em;
         letter-spacing: 2px;
     }
 
-    .price-price {
-        background: #e8e8e8;
+    .pricePrice {
+        background: #e0e0e0;
         height: 70px;
     }
 
-    .price-free {
-        background: #e8e8e8;
+    .priceFree {
+        background: #e0e0e0;
         height: 70px;
     }
 
@@ -268,52 +217,37 @@ main {
         font-size:24px;
     }
 
-    .price-signup {
-        background: #e8e8e8;
+    .priceSignup {
+        background: #e0e0e0;
     }
 
-    .pricing-button {
+    .pricingButton {
         background: #FD5B03;
         color: #fff;
         padding: 10px 30px;
-
     }
 
-    .best-choice {
+    .bestChoice {
         background: #FD5B03;
         color: #fff;
         font-size: 1.5em;
         letter-spacing: 2px;
     }
-
-    @media screen and (min-width: 700px) {
-        .price-column {
-            width: 33.33%;
-            padding: 10px;
-        }
-    }
     /* Pricing END */
 
     /* Google Maps START */
-    #map-responsive {
+    #mapResponsive {
         clear: both;
         position: relative;
         padding-bottom: 50%;
         padding-top: 20px;
-        /* nez zašto ovo dvoje doli
-        height: 0;
-        overflow: hidden; */
-
         margin: 20px 10px;
     }
 
-    #map-responsive iframe {
+    #mapResponsive iframe {
         position: absolute;
         width: 100% !important;
         height: 100% !important;
-        /* nez zašto ovo dvoje doli 
-        top: 0;
-        left: 0; */
     }
     /* Google Maps END*/
 /*Content END */
@@ -322,46 +256,55 @@ main {
 footer {
     background: #333;
     color: #ddd;
-    /* Određuje da se footer uvik lipi za dno, osim kad se skrola */
     position: absolute;
-    bottom: 0;
     width: 100%;
-    height: 510px;
 }
 
-footer a {
-    color: #FD5B03;
-}
-
+/* declares max width of the footer, just like the header */
 .footy {
     max-width: 960px;
     margin: 0 auto;
 }
 
-.footer-column {
-    background: #353535;
+.footerColumnMain { 
     width: 100%;
     float: left;
-    padding: 10px 20px;
+    padding: 0 20px;
 }
 
-@media screen and (min-width: 700px) {
-    .footer-column {
-        width: 50%;
-    }
+.footerColumnMain a {
+    color: #FD5B03;
+}
 
-    main {
-        padding-bottom: 290px;
-    }
+.footerColumn {
+    width: 100%;
+    float: left;
+    padding: 0 20px;
+}
 
-    footer {
-        height: 270px;
-    }
+.footerColumn i {
+    margin: 3px;
+}
+
+.footerColumn a {
+    color: #ddd;
+}
+
+#footerColumnCompany ul {
+    list-style-type: none;
+}
+
+#footerColumnCompany li {
+    margin: 5px 0;
+}
+
+.footerColumn a:hover {
+    color:#FD5B03;
 }
 
 footer h4 {
     text-transform: uppercase;
-    padding: 6px 0 4px 0;
+    padding: 20px 0 0 0;
 }
 
 footer h4, p {
@@ -369,14 +312,14 @@ footer h4, p {
     vertical-align: middle;
 }
 
-#footer-email {
+#footerEmail {
     height: 40px;
     width: 100%;
     text-align: center;
     margin: 4px 0;
 }
 
-.button-signup {
+.buttonSignup {
     display: inline-block;
     background: #FD5B03;
     color: #000;
@@ -388,15 +331,16 @@ footer h4, p {
     margin: 4px 0 15px 0;
 }
 
-.cdb-footer {
+.cdbFooter {
     background: #111;
     color: #ddd;
     width: 100%;
     float: left;
     padding: 10px;
+    margin-top: 10px;
 }
 
-.cdb-footer p {
+.cdbFooter p {
     display: inline-block;
 }
 
@@ -414,4 +358,77 @@ footer h4, p {
 
 .bold {
     font-weight: bold;
+}
+
+/* RESPONSIVE */
+@media screen and (min-width: 500px) {
+    /* NAVIGATION */
+    /* NAV bar stays fixed when the page scrolls */ 
+    header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+    /* Content beggins after the header/nav */
+    #wrapper {
+        margin-top: 40px;
+    }
+    /* LOGO floats left */
+    #navLogo {
+        float: left;
+    }
+    /* NAV list can be near other elements (logo) */
+    #myTopnav {
+        clear: none;
+        display: block;       
+    }
+    /* listed items are near each other, not below */
+    #myTopnav li {
+        display: inline-block;
+        float: left;
+    }
+    /* hides menu icon because all the listed items are shown */
+    #menuIcon {
+        display: none;
+    }
+    /* Two side by side images instead of 1 */
+    #imglry .rspnsv {
+        position: relative;
+        width: 50%;
+    }
+}   
+
+/* Footer columns */
+@media screen and (min-width: 700px) {
+    .footerColumnMain {
+        width: 50%;
+    }
+    .footerColumn {
+        width: 50%;
+    }
+    /* 3 side by side price columns instead of 1 */
+    .priceColumn {
+        width: 33.33%;
+        padding: 10px;
+    }
+}
+
+
+@media screen and (min-width: 800px) {
+    .footerColumn {
+        width: 25%;
+    }
+    /* 4 side by side images in the image gallery */
+    #imglry .rspnsv {
+        position: relative;
+        width: 25%;
+    }
+}
+
+
+@media screen and (min-width: 1000px) {
+    /* balances out margins and overall look of image gallery */
+    #imglry {
+        margin: 6px -6px;
+    }
 }
