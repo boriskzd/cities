@@ -8,33 +8,46 @@
     <title>Cities - The most spectacular cities around the globe!</title>
     <link rel="stylesheet" href="main.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <script src="https://use.fontawesome.com/883a597dbf.js"></script>
+    <meta name="description" content="All the information you need about the cities you want to visit, live in or work from. Search photos, videos, facts, income, climate, demographics and more.">
+    <link rel="icon" href="favicon.ico">
 </head>
 
 <body>
     <div id="wrapper">
+        <!-- Header -->
         <header>
             <div id="navy">
-                <img id="navLogo" src="images/cities-logo-orange-wide2.png">
+                <div id="navLogoContainer">
+                    <a href="#">
+                        <img id="navLogo" src="images/cities-logo-orange-wide2.png">
+                    </a>
+                </div>
+                <!-- Navigation -->
                 <nav id="mainNav">
                     <ul id="myTopnav">
                         <li><a class="active" href="#">Home</a></li>
                         <li><a href="#">Blog</a></li>
                         <li><a href="#">About</a></li>
                         <li><a href="#">Contact</a></li>
-                        <li class="menuIcon"><a onclick="myFunction()"> <!-- Menu icon od tri diva -->
-                            <div class="menuIconLine"></div>
-                            <div class="menuIconLine"></div>
-                            <div class="menuIconLine"></div>
-                        </a></li>
+                    </ul>
+                        <div id="menuIcon">
+                            <a> <!-- Menu icon made of three divs -->
+                                <div class="menuIconLine"></div>
+                                <div class="menuIconLine"></div>
+                                <div class="menuIconLine"></div>
+                            </a>
+                        </div>
                     </ul>
                 </nav>
             </div>
         </header>
 
+
         <main id="content">
+            <!-- Image gallery containing 4 images -->
             <div id="imglry">
 
-                
                 <div class="rspnsv">
                         <a href="#">
                             <img src="images/gallery/singapore.jpg" alt="Singapore">
@@ -42,7 +55,6 @@
                         </a>
                 </div>
                 
-
                 <div class="rspnsv">
                         <a href="#">
                             <img src="images/gallery/berlin.jpg" alt="Berlin">
@@ -66,6 +78,7 @@
 
             </div><!-- imglry end -->
 
+            <!-- Three textual divs -->
             <div id="cities">
                 <div class="city">
                     <h1>London</h1>
@@ -85,63 +98,64 @@
             </div>
 
             <!-- Price div START -->
-            <div class="price-div">
-                <div class="price-column">
+            <div class="priceDiv">
+                <div class="priceColumn">
                     <ul class="pricing">
-                        <li class="price-header">Basic</li>
-                        <li class="price-free">FREE</li>
+                        <li class="priceHeader">Basic</li>
+                        <li class="priceFree">FREE</li>
                         <li>1 User</li>
                         <li>Basic offers</li>
                         <li>Email support</li>
                         <li> - </li>
-                        <li class="price-signup">
-                            <a href="#" class="pricing-button">Sign up</a>
+                        <li class="priceSignup">
+                            <a href="#" class="pricingButton">Sign up</a>
                         </li>
                     </ul>
                 </div>
 
-                <div class="price-column">
+                <div class="priceColumn">
                     <ul class="pricing">
-                        <li class="best-choice">Advanced</li>
-                        <li class="price-price">$ <span class="thePrice">19.99</span> / year</li>
+                        <li class="bestChoice">Advanced</li>
+                        <li class="pricePrice">$ <span class="thePrice">19.99</span> / year</li>
                         <li>3 Users</li> 
                         <li>Personalised offers</li>
                         <li>Email + Skype support</li>
                         <li>Data export</li>
-                        <li class="price-signup">
-                            <a href="#" class="pricing-button">Sign up</a>
+                        <li class="priceSignup">
+                            <a href="#" class="pricingButton">Sign up</a>
                         </li>
                     </ul>
                 </div>
 
-                <div class="price-column">
+                <div class="priceColumn">
                     <ul class="pricing">
-                        <li class="price-header">Premium</li>
-                        <li class="price-price">$ <span class="thePrice">49.99</span> / year</li>
+                        <li class="priceHeader">Premium</li>
+                        <li class="pricePrice">$ <span class="thePrice">49.99</span> / year</li>
                         <li>10 users</li>
                         <li>Personalised offers</li>
                         <li>Email + Skype support</li>
                         <li>Data export</li>
-                        <li class="price-signup">
-                            <a href="#" class="pricing-button">Sign up</a>
+                        <li class="priceSignup">
+                            <a href="#" class="pricingButton">Sign up</a>
                         </li>
                     </ul>
                 </div>
-            </div> <!-- Price div END -->
+            </div>
+            <!-- Price div END -->
 
-
-            <div id="map-responsive"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2780.914306175094!2d15.973488215569173!3d45.81297457910666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4765d6fda5182e51%3A0x9f858f7ffd761d29!2sIlica+1A%2C+10000%2C+Zagreb%2C+Croatia!5e0!3m2!1sen!2sus!4v1476726697508" width="960" height="480" frameborder="0" style="border:0" allowfullscreen></iframe></div>
-
+            <!-- Google Maps -->
+            <div id="mapResponsive"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2780.914306175094!2d15.973488215569173!3d45.81297457910666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4765d6fda5182e51%3A0x9f858f7ffd761d29!2sIlica+1A%2C+10000%2C+Zagreb%2C+Croatia!5e0!3m2!1sen!2sus!4v1476726697508" width="960" height="480" frameborder="0" style="border:0" allowfullscreen></iframe></div>
             
         </main>
 
+        <!-- Footer -->
         <footer>
             <div class="footy">
-                <div class="footer-column">
+                <div class="footerColumnMain">
                     <form>
                         <h4>Newsletter</h4>
-                        <input id="footer-email" type="text" name="newsletter-email" placeholder="Your email adress">
-                        <button class="button-signup">Sign up</button>
+                        <input id="footerEmail" type="text" name="newsletterEmail" placeholder="Your email adress">
+                        <button class="buttonSignup">Sign up</button>
                     </form>
 
                     <h4>Contact</h4>
@@ -152,30 +166,43 @@
                     </address>
                 </div>
 
-                <div class="footer-column">
+                <div class="footerColumn" id="footerColumnCompany">
                     <h4>Company</h4>
-                    <p>About</p>
-                    <p>Jobs</p>
-                    <p>Help</p>
-                    <p>Press</p>
-                    <p>FAQs</p>
-                    <p>Cookie Policy</p>
-                    <p>Terms & Conditions</p>
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Jobs</a></li>
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footerColumn" id="footerColumnSocial">
+                    <h4>Social</h4>
+                    <a href="https://www.facebook.com/"><i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i></a>
+                    <a href="https://twitter.com"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a>
+                    <a href="https://www.instagram.com"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
+                    <a href="https://www.youtube.com"><i class="fa fa-youtube  fa-2x" aria-hidden="true"></i></a>
                 </div>
             </div>
 
-        </footer>
-
-            <div class="cdb-footer">
+            <!-- Black line footer -->
+            <div class="cdbFooter">
                 <div class="footy">
                     <p id="copyright">© Cities 2016</p>
                     <p id="designby">Design by: <span class="orange">BK</span></p>
                 </div>
             </div>
 
-    </div> <!-- the end of wrapper -->
-    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+        </footer>
 
+
+    </div> <!-- the end of wrapper -->
+    
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script src="myScript.js"></script>
 
 </body>
 
